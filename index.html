@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>この人は誰？</title>
+<link rel="stylesheet" href="assets/css/reset.css">
+<link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+  <header>
+      <div class="header">
+        <h1>次の発表はこの方！！</h1>
+      </div>
+  </header>
+<body>
+  <!-- <button id="btn1">Are you ready?</button> -->
+
+  <button id="btn2">Go!!</button>
+
+<div align = "center">
+  <img id="result" alt="ここに表示されます。" width="50%" >
+</div>
+  <script>
+
+    // let btn1 = document.getElementById('btn1');
+    // btn1.addEventListener('click',getmove)
+    //   function getmove(){
+    //     <video src='assets/images/move.MOV'></video>;
+    //     }
+
+
+//アニメーションの追加
+//一度でたものは出ないようにする
+
+
+    let btn2 = document.getElementById('btn2');
+    btn2.addEventListener('click',getImage)
+      function getImage(){
+        //画像ファイル名を配列で保持
+        var arr = ['ituki.jpg', 'kyousuke.jpg', 'namiko.jpg','haruka.jpg','yuuki_T.jpg','yuuki_U.jpg','tokitada.jpg','dai.jpg','nozomu.jpg','sige.jpg','taka.jpg','sougo.jpg','yositoki.jpg'];
+        //ランダムで画像ファイルを取得して表示する
+        var obj = document.getElementById("result");
+        let a = Math.floor(Math.random() * arr.length);
+            obj.src = 'assets/images/'+arr[a];
+      }
+      </script>
+
+</body>
+</html>
+
+
