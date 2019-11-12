@@ -2,9 +2,11 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<title>この人は誰？</title>
+<title>発表君</title>
 <link rel="stylesheet" href="assets/css/reset.css">
 <link rel="stylesheet" href="assets/css/style.css">
+
+<!-- クラス内の発表順を決めるのが面倒なときに使えるプログラム。 -->
 
 </head>
   <header>
@@ -13,33 +15,24 @@
       </div>
   </header>
 <body>
-  <!-- <button id="btn1">Are you ready?</button> -->
 
-  <button id="btn2" style="width:60px;height:30px">Go!!</button>
+  <button id="btn" style="width:60px;height:30px">Go!!</button>
 
   <div align = "center">
     <img id="result" alt="ここに表示されます。" width="50%" >
   </div>
   <script>
   //画像ファイル名を配列で保持
-    var arr = [
-      'ituki.jpg',
-      'kyousuke.jpg',
-      // 'haruka.jpg',
-      'yuuki_T.jpg',
-      'yuuki_U.jpg',
-      'tokitada.jpg',
-      'dai.jpg',
-      'nozomu.jpg',
-      'sige.jpg',
-      'taka.jpg',
-      'yositoki.jpg',
-      'namiko.jpg'];
+    let arr = [
+      'sato.jpg',
+      'yamada.jpg',
+      'suzuki.jpg',
+      'abe.jpg'];
 
 //配列の大きさに合わせて適当な回数繰り返す
-for ( i = 0 ; i < 40 ; i++ )
+for ( i = 0 ; i < 20 ; i++ )
 {
-  //0～4までの乱数を作成し、変数Rndに格納する
+  //乱数を作成し、変数Rndに格納する
   var rnd = Math.floor(Math.random() * arr.length);
 
   var str1 = arr[0];    //配列colの最初の要素
@@ -50,23 +43,20 @@ for ( i = 0 ; i < 40 ; i++ )
   arr[0]   = str2;
 }
 
-let btn2 = document.getElementById('btn2');
-    btn2.addEventListener('click',getImage)
+let btn = document.getElementById('btn');
+    btn.addEventListener('click',getImage)
 
 var cnt = 0; //何問出題したかカウントする変数
 
 function getImage(){
-  if( cnt < 12 )
+  if( cnt < 4 )
   {
     var obj = document.getElementById("result");
     obj.src = 'assets/images/'+arr[cnt];
     cnt++;
-  }else{
-    //終了したら、そのことを表示してボタンを押せなくする
-    document.quiz.elements[0].value = "全員終了";
-    document.quiz.elements[1].disabled = true;
   }
 }
 </script>
 </body>
 </html>
+
